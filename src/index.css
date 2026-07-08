@@ -1,0 +1,138 @@
+:root {
+  color: #1f1f1f;
+  background: #f7f3ea;
+  font-family: 'Gloria Hallelujah', cursive;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.machine-shell,
+.dev-panel {
+  width: min(100%, 32rem);
+  padding: 1.5rem;
+}
+
+.slot-machine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.reels {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.reel {
+  width: 5rem;
+  height: 5rem;
+  border: 3px solid #222;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fffdf8;
+  box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.15);
+}
+
+.reel-symbol {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.result {
+  margin: 0;
+  min-height: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.result-win {
+  color: #0a7a2f;
+}
+
+.result-loss {
+  color: #b00020;
+}
+
+.result-empty {
+  visibility: hidden;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+}
+
+.score {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.dev-panel h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.dev-note,
+.dev-status,
+.dev-result {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+}
+
+.dev-actions,
+.dev-bulk-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.dev-bulk {
+  margin-top: 1rem;
+}
+
+.dev-bulk label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.dev-bulk input {
+  width: 6rem;
+  padding: 0.35rem 0.5rem;
+  font: inherit;
+  border: 2px solid #222;
+  border-radius: 0.35rem;
+  background: #fffdf8;
+}
