@@ -3,10 +3,17 @@ import {
   generateOutcome,
   type OutcomeOverride,
 } from '../engine/outcomeEngine'
-import { Reel } from './Reel'
+import { Reel, REEL_SPIN_CYCLE_MS } from './Reel'
 
-const STAGGER_MS = 750
-const MIN_SPIN_MS = 500
+// Stop times are whole multiples of the reel cycle so that each reel always
+// shows the same number of symbol changes, no matter how fast the reels spin.
+// Changing REEL_SPIN_CYCLE_MS rescales the spin duration instead of silently
+// dropping frames.
+const MIN_SPIN_CYCLES = 6
+const STAGGER_CYCLES = 9
+
+const MIN_SPIN_MS = REEL_SPIN_CYCLE_MS * MIN_SPIN_CYCLES
+const STAGGER_MS = REEL_SPIN_CYCLE_MS * STAGGER_CYCLES
 
 function randomInitialSymbols(): [number, number, number] {
   return [
