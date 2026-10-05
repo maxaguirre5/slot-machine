@@ -1,12 +1,19 @@
 import { useEffect, useState } from 'react'
 
+/** How long each reel holds a symbol before flipping to the next one. */
+export const REEL_SPIN_CYCLE_MS = 180
+
 type ReelProps = {
   symbol: number
   isSpinning: boolean
   spinCycleMs?: number
 }
 
-export function Reel({ symbol, isSpinning, spinCycleMs = 80 }: ReelProps) {
+export function Reel({
+  symbol,
+  isSpinning,
+  spinCycleMs = REEL_SPIN_CYCLE_MS,
+}: ReelProps) {
   const [displaySymbol, setDisplaySymbol] = useState(symbol)
 
   useEffect(() => {
